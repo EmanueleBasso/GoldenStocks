@@ -1,0 +1,53 @@
+{
+    "yahooFinance": {
+        "url": "https://finance.yahoo.com/lookup?s=",
+        "xpath_button": "/html/body/div[1]/div/div/form/div/button[2]",
+        "xpath_ticker": "/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/div/div/section/section/div/div/div/div/table/tbody/tr[1]/td[1]/a"
+    },
+    "NASDAQ_OMX": {
+        "url_pt1": "https://www.nasdaq.com/en/symbol/",
+        "url_pt2": "/real-time",
+        "xpath_price": "//*[@id=\"qwidget_lastsale\"]",
+        "xpath_closePrice": "/html/body/div[1]/div[1]/div[1]/div[8]/div[2]/table/tbody/tr/td[3]",
+        "xpath_change": "//*[@id=\"qwidget_netchange\"]",
+        "xpath_percent": "//*[@id=\"qwidget_percent\"]",
+        "xpath_maxMin": "/html/body/div[1]/div[1]/div[1]/div[8]/div[2]/table/tbody/tr/td[4]"
+    },
+    "NYSE": {
+        "url": "https://www.nyse.com/quote/XNGS:",
+        "xpath_price": "/html/body/div[4]/div/div[4]/div/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div/div[2]/span[1]",
+        "xpath_closePrice": "/html/body/div[4]/div/div[4]/div/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[2]/div/div[8]/span[2]",
+        "xpath_change": "/html/body/div[4]/div/div[4]/div/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[2]/div/div[2]/span[2]",
+        "xpath_percent": "/html/body/div[4]/div/div[4]/div/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[2]/div/div[3]/span[2]",
+        "xpath_max": "/html/body/div[4]/div/div[4]/div/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[2]/div/div[10]/span[2]",
+        "xpath_min": "/html/body/div[4]/div/div[4]/div/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[2]/div/div[11]/span[2]"
+    },
+    "frankfurtStockExchange": {
+        "url": "http://en.boerse-frankfurt.de/searchresults?_search=",
+        "xpath_price": "/html/body/div[2]/div/div[9]/div/div[1]/div/div[2]/table/tbody/tr[1]/td[2]/div[1]",
+        "xpath_changePercent": "/html/body/div[2]/div/div[8]/div/div[2]/div/div/div[2]/div/table/tbody/tr[5]/td[2]/span",
+        "xpath_closePrice": "/html/body/div[2]/div/div[9]/div/div[1]/div/div[2]/table/tbody/tr[5]/td[2]",
+        "xpath_maxMin": "/html/body/div[2]/div/div[9]/div/div[1]/div/div[2]/table/tbody/tr[8]/td[2]"
+    },
+    "londonStockExchange": {
+        "url_search": "https://www.londonstockexchange.com/exchange/searchengine/search.html?q=",
+        "url_society": "/html/body/div[4]/div/div[6]/div/div[1]/div[4]/div[3]/table/tbody/tr[1]/td[2]/a",
+        "xpath_price": "/html/body/div[4]/div/div[3]/div[2]/div[1]/div[5]/div[1]/table/tbody/tr[1]/td[2]",
+        "xpath_closePrice": "/html/body/div[4]/div/div[3]/div[2]/div[1]/div[5]/div[1]/table/tbody/tr[3]/td[4]",
+        "xpath_change": "/html/body/div[4]/div/div[3]/div[2]/div[1]/div[5]/div[1]/table/tbody/tr[1]/td[4]/span[2]",
+        "xpath_percent": "/html/body/div[4]/div/div[3]/div[2]/div[1]/div[5]/div[1]/table/tbody/tr[1]/td[4]/span[1]",
+        "xpath_max": "/html/body/div[4]/div/div[3]/div[2]/div[1]/div[5]/div[1]/table/tbody/tr[2]/td[2]",
+        "xpath_min": "/html/body/div[4]/div/div[3]/div[2]/div[1]/div[5]/div[1]/table/tbody/tr[2]/td[4]"
+    },
+    "italianStockExchange": {
+        "url_search": "https://www.borsaitaliana.it/borsa/searchengine/search.html?q=",
+        "url_society": "/html/body/div[4]/div[8]/main/section/div[3]/article[1]/div[2]/div[2]/table/tbody/tr[3]/td[1]/a",
+        "url_completeData": "/html/body/div[4]/div[8]/main/section/div[4]/article/div/div/ul/li[2]/a",
+        "xpath_price": "/html/body/div[4]/div[8]/main/section/div[3]/article/div/div/div[2]/span[1]/strong",
+        "xpath_closePrice": "/html/body/div[4]/div[8]/main/section/div[7]/article/div/div[2]/table/tbody/tr[6]/td[2]/span",
+        "xpath_change": "/html/body/div[4]/div[8]/main/section/div[7]/article/div/div[1]/table/tbody/tr[12]/td[2]/span",
+        "xpath_percent": "/html/body/div[4]/div[8]/main/section/div[7]/article/div/div[1]/table/tbody/tr[11]/td[2]/span",
+        "xpath_max": "/html/body/div[4]/div[8]/main/section/div[7]/article/div/div[2]/table/tbody/tr[2]/td[2]/span",
+        "xpath_min": "/html/body/div[4]/div[8]/main/section/div[7]/article/div/div[2]/table/tbody/tr[4]/td[2]/span"
+    }
+}

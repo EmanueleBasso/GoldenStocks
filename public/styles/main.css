@@ -1,0 +1,24 @@
+#pageintro{padding: 0;}
+
+#breadcrumb{padding-top: 50px;}
+
+button::-moz-focus-inner{border: 0;}
+
+body .row3 .hoc .content{width: 100%}
+
+@media screen and (min-width:651px){
+    #pageintro footer{
+        display: flex;
+    }
+    
+    #pageintro footer form{
+        margin-right: 8%;
+        width: 45%;
+    }
+}
+
+@media screen and (max-width:650px){   
+    #pageintro li article .btn{
+        margin-top: 4%;
+    }
+}

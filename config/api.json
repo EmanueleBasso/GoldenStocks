@@ -1,0 +1,17 @@
+{
+    "wikipedia": {
+        "search_pt1": "https://en.wikipedia.org/w/api.php?action=query&list=search&srlimit=1&format=json&srsearch=",
+        "search_pt2": "+incategory:Companies_listed_on_NASDAQ|Companies_listed_on_the_New_York_Stock_Exchange|Companies_listed_on_the_Frankfurt_Stock_Exchange|Companies_listed_on_the_London_Stock_Exchange|Companies_listed_on_the_Borsa_Italiana",
+        "page": "https://en.wikipedia.org/w/api.php?action=parse&format=json&pageid=",
+        "number_row_info": "/div[1]/table[1]/tbody/tr",
+        "info_row_pt1": "/div[1]/table[1]/tbody/tr[",
+        "info_row_th_pt2": "]/th//text()",
+        "info_row_td_pt2": "]/td//text()",
+        "description_row": "div[1]/p",
+        "description_pt1": "div[1]/p[",
+        "description_pt2": "]//text()"
+    },
+    "newsApi":{
+        "api_key": ""
+    }
+}

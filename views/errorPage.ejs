@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Golden Stocks</title>
+    <link rel="shortcut icon" href="../images/logo.png" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="../styles/errorPage.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <div class="terminal">
+        <h1>Error <span class="errorcode"><%= error.type %></span></h1>
+        <p class="output"><%= error.message %></p>
+        <p class="output">Please try <a href="/GoldenStocks">this link</a></a></p>
+        <p class="output">Good luck</p>
+    </div>
+  </body>
+</html>

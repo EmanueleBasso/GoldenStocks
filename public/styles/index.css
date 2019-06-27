@@ -1,0 +1,23 @@
+html{
+    overflow-y:hidden;
+}
+
+.overlay{
+    height: 98%;
+}
+
+button::-moz-focus-inner{
+    border: 0;
+}
+
+@media screen and (max-width:1920px){
+    html, body{
+        height: 98.7%;
+    }
+}
+
+@media screen and (max-width:750px){
+    html{
+        overflow-y: auto;
+    }
+}

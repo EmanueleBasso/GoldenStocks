@@ -1,0 +1,8 @@
+{
+    "host": "localhost",
+    "port": 27017,
+    "user": "root",
+    "password": "root",
+    "db_name": "GoldenStock",
+    "collection_name": "WikipediaCache"
+}

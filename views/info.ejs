@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Golden Stocks</title>
+    <link rel="shortcut icon" href="../images/logo.png" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="../styles/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../styles/main.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body id="top">
+    <div class="bgded overlay">
+      <div id="pageintro" class="hoc clear"> 
+        <ul class="slides">
+          <li>
+            <article>
+              <footer>
+                <form class="group" method="get" action="/GoldenStocks/search">
+                  <fieldset>
+                    <input name="name" type="text" placeholder="Insert company name&hellip;">
+                    <button class="fa fa-search" type="submit" title="Submit"><em>Submit</em></button>
+                  </fieldset>
+                </form>
+                <a class="btn" href="/GoldenStocks/recent">Recent Searchs</a>
+              </footer>
+            </article>
+          </li>
+        </ul>
+      </div>
+
+      <section id="breadcrumb" class="hoc clear nameBar"> 
+        <h6 class="heading"><%= payload.societyName %> (<%= payload.ticker %>)</h6>
+        <form method="get" action="/GoldenStocks/search">
+          <input type="hidden" name="name" value=<%= payload.societyName %>>
+          <input type="hidden" name="ticker" value=<%= payload.ticker %>>
+          <button class="btn" type="submit">Stocks Price</button>
+        </form>
+      </section>
+    </div>
+
+    <div class="wrapper row3">
+      <main class="hoc container clear"> 
+        <div class="content three_quarter first">
+          <p><b>Industry:</b>&nbsp;<%= payload.wikipedia.industry %></p>
+          <p><b>Type:</b>&nbsp;<%= payload.wikipedia.type %></p>
+          <p><b>Headquarters:</b>&nbsp;<%= payload.wikipedia.headquarters %></p>
+          <p><b>Founded:</b>&nbsp;<%= payload.wikipedia.founded %></p>
+          <p><b>Link:</b>&nbsp;
+            <% 
+              var link_split = payload.wikipedia.link.split(",")
+              for(var i = 0; i < link_split.length; i++){
+                var link = link_split[i].trim()
+            %>
+            <a href=<%= "http://" + link %> target="_blank"><%= link %></a>
+            <%
+                if(i < (link_split.length - 1)){
+                %>
+                ,
+            <%
+                }
+              }
+            %>
+          </p>
+          <p>
+            <%
+              description_split = payload.wikipedia.description.split('\n')
+              for(var i = 0; i < (description_split.length - 1); i++){
+            %>
+            <%= description_split[i] %>
+            <br/><br/>
+            <%
+              }
+            %>
+          </p>  
+
+          <div id="comments">
+            <h2>NEWS</h2>
+            <ul>
+              <% for(var i = 0; i < payload.news.length; i++){
+              %>
+                <li>
+                  <article>
+                    <header>
+                      <figure class="avatar"><img src=<%= payload.news[i].urlToImage %>></figure>
+                      <address>
+                        <a href=<%= payload.news[i].url %> target="_blank"><%= payload.news[i].title %></a>
+                      </address>
+                      <%= payload.news[i].source %> - <time><%= payload.news[i].publishedAt %></time>
+                    </header>
+                    <div class="comcont">
+                      <p><%= payload.news[i].description %></p>
+                    </div>
+                  </article>
+                </li>
+              <%
+                }
+              %>
+            </ul>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="wrapper row5">
+      <footer id="footer" class="hoc clear"> 
+          <nav>
+            <ul class="nospace inline pushright uppercase">
+              <li><a href="/GoldenStocks"><i class="fa fa-lg fa-home"></i></a></li>
+              <li><a href="/GoldenStocks/about">About</a></li>
+              <li><a href="/GoldenStocks/terms">Terms</a></li>
+            </ul>
+          </nav>
+        </footer>
+        <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    </div>
+
+    <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- JAVASCRIPTS -->
+    <script src="../scripts/jquery.min.js"></script>
+    <script src="../scripts/jquery.backtotop.js"></script>
+    <script src="../scripts/jquery.mobilemenu.js"></script>
+    <script src="../scripts/jquery.flexslider-min.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

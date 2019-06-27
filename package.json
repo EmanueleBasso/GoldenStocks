@@ -1,0 +1,23 @@
+{
+  "name": "goldenstocks",
+  "version": "1.0.0",
+  "description": "A data integration application for compare stocks price of societies",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Emanuele Basso",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "geckodriver": "^1.16.2",
+    "loglevel": "^1.6.1",
+    "mongoose": "^5.5.12",
+    "newsapi": "^2.4.0",
+    "request": "^2.88.0",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "xmldom": "^0.1.27",
+    "xpath": "0.0.27"
+  }
+}

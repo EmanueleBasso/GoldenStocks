@@ -1,0 +1,26 @@
+#pageintro{padding: 0;}
+
+#breadcrumb{padding-top: 50px;}
+
+button::-moz-focus-inner{border: 0;}
+
+body .row3 .hoc .content{width: 100%;}
+
+body > .row3{min-height: calc(83.7% - 42.5px);}
+body > .row5{position: relative;}
+
+#empty_list{
+    text-align: center;
+    font-size: 24px;
+    padding-top: 30px;
+}
+
+@media screen and (min-width:651px){
+    #pageintro footer{
+        display: flex;
+    }
+    
+    #pageintro footer form{
+        width: 45%;
+    }
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Golden Stocks</title>
+    <link rel="shortcut icon" href="../images/logo.png" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="../styles/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../styles/main.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body id="top">
+    <div class="bgded overlay">
+      <div id="pageintro" class="hoc clear"> 
+        <ul class="slides">
+          <li>
+            <article>
+              <footer>
+                <form class="group" method="get" action="/GoldenStocks/search">
+                  <fieldset>
+                    <input name="name" type="text" placeholder="Insert company name&hellip;">
+                    <button class="fa fa-search" type="submit" title="Submit"><em>Submit</em></button>
+                  </fieldset>
+                </form>
+                <a class="btn" href="/GoldenStocks/recent">Recent Searchs</a>
+              </footer>
+            </article>
+          </li>
+        </ul>
+      </div>
+
+      <section id="breadcrumb" class="hoc clear nameBar"> 
+        <h6 class="heading"><%= payload.societyName %> (<%= payload.ticker %>)</h6>
+        <form method="get" action="/GoldenStocks/info">
+          <input type="hidden" name="name" value=<%= payload.societyName %>>
+          <input type="hidden" name="ticker" value=<%= payload.ticker %>>
+          <button class="btn" type="submit">Info & News</button>
+        </form>
+      </section>
+    </div>
+
+    <div class="wrapper row3">
+      <main class="hoc container clear"> 
+        <div class="content three_quarter first">      
+          <h1>STOCKS PRICE</h1>
+          <div class="scrollable">
+            <table class="table table-sm table-hover">
+              <thead>
+                <tr>
+                  <th>Stock Exchange</th>
+                  <th>Price</th>
+                  <th>Change</th>
+                  <th>Percentage</th>
+                  <th>Price Last Close</th>
+                  <th>Minimun</th>
+                  <th>Maximum</th>
+                  <th>&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="https://www.nasdaq.com/en" target="_blank">NASDAQ OMX</a></td>
+                  <td><%= payload.data[0].price %></td>
+                  <td><%= payload.data[0].change %></td>
+                  <td><%= payload.data[0].percent %></td>
+                  <td><%= payload.data[0].closePrice %></td>
+                  <td><%= payload.data[0].min %></td>
+                  <td><%= payload.data[0].max %></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><a href="https://www.nyse.com" target="_blank">New York Stock Exchange</a></td>
+                  <td><%= payload.data[1].price %></td>
+                  <td><%= payload.data[1].change %></td>
+                  <td><%= payload.data[1].percent %></td>
+                  <td><%= payload.data[1].closePrice %></td>
+                  <td><%= payload.data[1].min %></td>
+                  <td><%= payload.data[1].max %></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><a href="http://en.boerse-frankfurt.de/" target="_blank">Frankfurt Stock Exchange</a></td>
+                  <td><%= payload.data[2].price %></td>
+                  <td><%= payload.data[2].change %></td>
+                  <td><%= payload.data[2].percent %></td>
+                  <td><%= payload.data[2].closePrice %></td>
+                  <td><%= payload.data[2].min %></td>
+                  <td><%= payload.data[2].max %></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><a href="https://www.londonstockexchange.com" target="_blank">London Stock Exchange</a></td>
+                  <td><%= payload.data[3].price %></td>
+                  <td><%= payload.data[3].change %></td>
+                  <td><%= payload.data[3].percent %></td>
+                  <td><%= payload.data[3].closePrice %></td>
+                  <td><%= payload.data[3].min %></td>
+                  <td><%= payload.data[3].max %></td>
+                  <td><a href="<%= payload.data[3].url %>" target="_blank" class="warn warning" 
+                    onmouseover="$(this).popover({placement: 'top', content: 'Values ​​may be incorrect. If you have any doubts click here to check them.'}).popover('show');" 
+                    onmouseout="$(this).popover('hide');"></a></td>                
+                </tr>
+                <tr>
+                  <td><a href="https://www.borsaitaliana.it/homepage/homepage.en.htm" target="_blank">Italian Stock Exchange</a></td>
+                  <td><%= payload.data[4].price %></td>
+                  <td><%= payload.data[4].change %></td>
+                  <td><%= payload.data[4].percent %></td>
+                  <td><%= payload.data[4].closePrice %></td>
+                  <td><%= payload.data[4].min %></td>
+                  <td><%= payload.data[4].max %></td>
+                  <td><a href="<%= payload.data[4].url %>" target="_blank" class="warn warning" 
+                    onmouseover="$(this).popover({placement: 'top', content: 'Values ​​may be incorrect. If you have any doubts click here to check them.'}).popover('show');" 
+                    onmouseout="$(this).popover('hide');"></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="wrapper row5">
+      <footer id="footer" class="hoc clear"> 
+          <nav>
+            <ul class="nospace inline pushright uppercase">
+              <li><a href="/GoldenStocks"><i class="fa fa-lg fa-home"></i></a></li>
+              <li><a href="/GoldenStocks/about">About</a></li>
+              <li><a href="/GoldenStocks/terms">Terms</a></li>
+            </ul>
+          </nav>
+        </footer>
+        <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    </div>
+
+    <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- JAVASCRIPTS -->
+    <script src="../scripts/jquery.min.js"></script>
+    <script src="../scripts/jquery.backtotop.js"></script>
+    <script src="../scripts/jquery.mobilemenu.js"></script>
+    <script src="../scripts/jquery.flexslider-min.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/main.js"></script>
+  </body>
+</html>

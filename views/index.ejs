@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Golden Stocks</title>
+    <link rel="shortcut icon" href="images/logo.png" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="../styles/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../styles/index.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body id="top">
+    <div class="bgded overlay"> 
+      <div id="pageintro" class="hoc clear"> 
+        <div class="flexslider basicslider">
+          <ul class="slides">
+            <li>
+              <article>
+                <h3 class="heading">Golden Stocks</h3>
+                <p>A data integration application for compare stocks price of societies</p>
+                <footer>
+                  <form class="group" method="get" action="/GoldenStocks/search">
+                    <fieldset>
+                      <input id="inputTag" name="name" type="text" placeholder="Insert company name&hellip;">
+                      <button class="fa fa-search" type="submit" title="Submit"><em>Submit</em></button>
+                    </fieldset>
+                  </form>
+                  <br/>
+                  <a class="btn" href="/GoldenStocks/recent">Recent Searchs</a>
+                </footer>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper row5">
+        <footer id="footer" class="hoc clear"> 
+            <nav>
+              <ul class="nospace inline pushright uppercase">
+                <li><a href=""><i class="fa fa-lg fa-home"></i></a></li>
+                <li><a href="/GoldenStocks/about">About</a></li>
+                <li><a href="/GoldenStocks/terms">Terms</a></li>
+              </ul>
+            </nav>
+          </footer>
+          <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+      </div>
+
+    <!-- JAVASCRIPTS -->
+    <script src="../scripts/jquery.min.js"></script>
+    <script src="../scripts/jquery.backtotop.js"></script>
+    <script src="../scripts/jquery.mobilemenu.js"></script>
+    <script src="../scripts/jquery.flexslider-min.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/bootstrap.bundle.min.js"></script>
+
+    <% if((typeof error != 'undefined') && (error.tickerNotFound === 'YES')) { %>
+      <script>$(document).ready(function() {
+        setTimeout(function(){
+          $('#inputTag').popover({placement: 'left', trigger: 'manual', content: 'Name not inserted or wrong'}).popover('show');
+        }, 100);
+        
+        })</script>
+    <% } %>
+
+  </body>
+</html>
